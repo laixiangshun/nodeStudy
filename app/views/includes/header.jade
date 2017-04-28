@@ -1,0 +1,19 @@
+//Created by lailai on 2017/4/28.
+.container
+   .row.page-header
+      .panel.panel-default
+         .panel-heading
+            h3 计算器
+         .panel-body
+            .row
+               if data
+                  input#content(type="text",value="#{data}" style={'height':'90px','width':'350px'})
+               else
+                  input#content(type="text" style={'height':'90px','width':'350px'})
+            input#num1(type="radio")
+            label 一般模式
+            input#num2(type="radio")
+            label 贷款模式
+            input#num3(type="radio")
+            label 收款机
+

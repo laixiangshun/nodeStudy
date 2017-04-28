@@ -1,0 +1,34 @@
+{
+  "name": "nodestudy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laixiangshun/nodeStudy.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "lai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laixiangshun/nodeStudy/issues"
+  },
+  "homepage": "https://github.com/laixiangshun/nodeStudy#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "jade": "^1.11.0",
+    "moment": "^2.18.1",
+    "mongoose": "^4.9.6",
+    "morgan": "^1.8.1",
+    "serve-static": "^1.12.2"
+  }
+}

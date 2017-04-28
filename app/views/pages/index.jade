@@ -1,0 +1,157 @@
+// Created by lailai on 2017/4/28.
+extends ../layout
+block content
+   .container
+      .row
+         table
+            //-thead
+               th(colspan="4" style={'font-size':'20px','font-align':'center'})
+                  label 计算器
+            tbody#first
+               //-tr
+                  td(colspan="4")
+                     input#content(type="text",style={'height':'90px','width':'350px'})
+               //-tr
+                  td(colspan="4")
+                     input(type="radio")
+                     label 一般模式
+                     input(type="radio")
+                     label 贷款模式
+                     input(type="radio")
+                     label 收款机
+               tr
+                  td
+                     input#mc(type="button" value="MC" style={'height':'70px','width':'90px'})
+                     input#mr(type="button" value="MR" style={'height':'70px','width':'90px'})
+                     input#ms(type="button" value="MS" style={'height':'70px','width':'90px'})
+                     input#madd(type="button" value="M+" style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input#del(type="button" value="<-" style={'height':'70px','width':'90px'})
+                     input#ce(type="button" value="CE" style={'height':'70px','width':'90px'})
+                     input#c(type="button" value="C"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="/"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input.num(type="button" value="7" style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="8" style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="9" style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="*"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input.num(type="button" value="4"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="5"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="6"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="-"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input.num(type="button" value="1"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="2"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="3"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="+"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input.num(type="button" value="0"  style={'height':'70px','width':'90px'})
+                     input.num(type="button" value="."  style={'height':'70px','width':'90px'})
+                     input#result(type="button" value="="  style={'height':'70px','width':'90px'})
+            tbody#next(style={'display':'none'})
+               tr
+                  td
+                     lable(type="text" style={'height':'20px','width':'90px'}) 贷款金额
+                     |&nbsp;&nbsp;
+                     input#money.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+               tr
+                  td
+                     lable(type="text" style={'height':'20px','width':'90px'}) 贷款年限
+                     |&nbsp;&nbsp;
+                     input#year.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+               tr
+                  td
+                     lable(type="text" style={'height':'20px','width':'90px'}) 年利率
+                     |&nbsp;&nbsp;
+                     input#pase.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+               tr
+                  td
+                     input#single(type="radio" checked="checked" value="1")
+                     label 单利
+                     input#more(type="radio" value="2")
+                     label 复利
+               tr
+                  td
+                     input.num2(type="button" value="/"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="7"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="8"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="9"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input#del(type="button" value="<-"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="4"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="5"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="6"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input#delall(type="button" value="CE"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="1"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="2"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="3"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input#set0(type="button" value="C"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="0"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="."  style={'height':'70px','width':'90px'})
+                     input#getData(type="button" value="计算"  style={'height':'70px','width':'90px'})
+            tbody#end(style={'display':'none'})
+               tr
+                  td
+                     lable(type="text" style={'height':'20px','width':'90px'}) 成人数量
+                     |&nbsp;&nbsp;
+                     input#bigperson.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+               tr
+                  td
+                     lable(type="text" style={'height':'20px','width':'90px'}) 小孩数量
+                     |&nbsp;&nbsp;
+                     input#samllperson.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+               tr
+                  td
+                     lable(type="text" style={'height':'20px','width':'90px'}) 优惠卷
+                     input#money_100(type="radio" value="1")
+                     label 100
+                     input#money_50(type="radio" value="2")
+                     label 50
+               tr
+                  td
+                     lable(type="text" style={'height':'20px','width':'90px'}) 折扣
+                     |&nbsp;&nbsp;
+                     input#dazhe.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                     label(type="text") 折
+               tr
+                  td
+                     input.num2(type="button" value="/"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="7"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="8"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input.num2(type="button" value="9"  style={'height':'70px','width':'90px'})
+                     input#delete(type="button" value="<-"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="4"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input.num2(type="button" value="5"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="6"  style={'height':'70px','width':'90px'})
+                     input#delAll(type="button" value="CE"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input.num2(type="button" value="1"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="2"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="3"  style={'height':'70px','width':'90px'})
+               tr
+                  td
+                     input#set00(type="button" value="C"  style={'height': '70px', 'width': '90px'})
+                     input.num2(type="button" value="0"  style={'height': '70px', 'width': '90px'})
+                     input.num2(type="button" value="."  style={'height': '70px', 'width': '90px'})
+               tr
+                  td
+                     input#getResult(type="button" value="计算"  style={'height':'70px','width':'90px'})
+      script(src='/js/choose.js')
+      script(src='/js/index.js')
+
