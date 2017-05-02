@@ -19,7 +19,9 @@ $(function(){
         $('#content').val(content+'='+result);
     });
     $('#del').click(function(){
-        $('#content').val('');
+        var content=$('#content').val();
+        content=content.substring(0,content.length-1);
+        $('#content').val(content);
     });
     $('#madd').click(function(){
         $.ajax({
@@ -154,8 +156,36 @@ $(function(){
         }
     });
     $('#money').focus(function(){
-        $('#num2').click(function(){
-            $('#money').val($(this).val());
+        $('.num2').click(function(){
+            var money=$('#money').val();
+            $('#money').val(money+$(this).val());
+        });
+        $('#delnext').click(function(){
+            var money=$('#money').val();
+            money=money.substring(0,money.length-1);
+            $('#money').val(money);
+        });
+    });
+    /*$('#delnext').click(function(){
+        var content=$('#content').val();
+        content=content.substring(0,content.length-1);
+        $('#content').val(content);
+    });*/
+    $('#year').focus(function(){
+        $('.num2').click(function(){
+            var year=$('#year').val();
+            $('#year').val(year+$(this).val());
+        });
+        $('#delnext').click(function(){
+            var year=$('#year').val();
+            year=year.substring(0,year.length-1);
+            $('#year').val(year);
+        });
+    });
+    $('#pase').focus(function(){
+        $('.num2').click(function(){
+            var pase=$('#pase').val();
+            $('#pase').val(pase+$(this).val());
         })
     });
 });

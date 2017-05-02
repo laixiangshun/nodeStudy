@@ -1,24 +1,10 @@
 // Created by lailai on 2017/4/28.
 extends ../layout
 block content
-   .container
+   .container.clearfix(style={'padding':'0'})
       .row
          table
-            //-thead
-               th(colspan="4" style={'font-size':'20px','font-align':'center'})
-                  label 计算器
             tbody#first
-               //-tr
-                  td(colspan="4")
-                     input#content(type="text",style={'height':'90px','width':'350px'})
-               //-tr
-                  td(colspan="4")
-                     input(type="radio")
-                     label 一般模式
-                     input(type="radio")
-                     label 贷款模式
-                     input(type="radio")
-                     label 收款机
                tr
                   td
                      input#mc(type="button" value="MC" style={'height':'70px','width':'90px'})
@@ -57,34 +43,44 @@ block content
             tbody#next(style={'display':'none'})
                tr
                   td
-                     lable(type="text" style={'height':'20px','width':'90px'}) 贷款金额
-                     |&nbsp;&nbsp;
-                     input#money.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                     .list-group(style={'width':'360px'})
+                        span.list-group-item
+                           .input-group
+                              lable.input-group-addon(type="text" style={'padding':'2px'}) 贷款金额
+                              input#money.form-control(type="text" value="" style={'height':'30px','width':'270px'})
                tr
                   td
-                     lable(type="text" style={'height':'20px','width':'90px'}) 贷款年限
-                     |&nbsp;&nbsp;
-                     input#year.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                     .list-group(style={'width':'360px'})
+                        span.list-group-item
+                           .input-group
+                              lable.input-group-addon(type="text" style={'padding':'2px'}) 贷款年限
+                              input#year.form-control(type="text" value="" style={'height':'30px','width':'270px'})
                tr
                   td
-                     lable(type="text" style={'height':'20px','width':'90px'}) 年利率
-                     |&nbsp;&nbsp;
-                     input#pase.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                     .list-group(style={'width':'360px'})
+                        span.list-group-item
+                           .input-group
+                              lable.input-group-addon(type="text" style={'padding':'2px','width':'61px'}) 年利率
+                              input#pase.form-control(type="text" value="" placeholder="百分数" style={'height':'30px','width':'270px'})
                tr
                   td
-                     input#single(type="radio" checked="checked" value="1")
-                     label 单利
-                     input#more(type="radio" value="2")
-                     label 复利
+                     .list-group(style={'width':'360px'})
+                        span.list-group-item
+                           .input-group
+                              input#single(type="radio" checked="checked" value="1")
+                              label 单利
+                              |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              input#more(type="radio" value="2")
+                              label 复利
                tr
                   td
-                     input.num2(type="button" value="/"  style={'height':'70px','width':'90px'})
+                     input.num2(type="button" value="%"  style={'height':'70px','width':'90px'})
                      input.num2(type="button" value="7"  style={'height':'70px','width':'90px'})
                      input.num2(type="button" value="8"  style={'height':'70px','width':'90px'})
                      input.num2(type="button" value="9"  style={'height':'70px','width':'90px'})
                tr
                   td
-                     input#del(type="button" value="<-"  style={'height':'70px','width':'90px'})
+                     input#delnext(type="button" value="<-"  style={'height':'70px','width':'90px'})
                      input.num2(type="button" value="4"  style={'height':'70px','width':'90px'})
                      input.num2(type="button" value="5"  style={'height':'70px','width':'90px'})
                      input.num2(type="button" value="6"  style={'height':'70px','width':'90px'})
@@ -103,55 +99,56 @@ block content
             tbody#end(style={'display':'none'})
                tr
                   td
-                     lable(type="text" style={'height':'20px','width':'90px'}) 成人数量
-                     |&nbsp;&nbsp;
-                     input#bigperson.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                     .list-group(style={'width':'360px'})
+                        span.list-group-item
+                           .input-group
+                              span.input-group-addon(style={'padding':'2px'}) 成人数量
+                              input#bigperson.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                        span.list-group-item
+                           .input-group
+                              span.input-group-addon(style={'padding':'2px'}) 小孩数量
+                              input#samllperson.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                        span.list-group-item
+                           .input-group
+                              span.input-group-addon 优惠卷
+                              .nav.nav-pills(role="tablist",style={'padding-left':'12px'})
+                                 li(role="presentation")
+                                    input#money_100(type="radio" value="100")
+                                    label 100
+                                    |&nbsp;&nbsp;&nbsp;
+                                 li(role="presentation")
+                                    input#money_50(type="radio" value="50")
+                                    label 50
+                        span.list-group-item
+                           .input-group
+                              span.input-group-addon(style={'padding':'2px'}) 折扣
+                              input#dazhe.form-control(type="text" value="" placeholder="0.1-9.9的数字" style={'height':'30px','width':'270px'})
+                              span.input-group-addon 折
                tr
                   td
-                     lable(type="text" style={'height':'20px','width':'90px'}) 小孩数量
-                     |&nbsp;&nbsp;
-                     input#samllperson.form-control(type="text" value="" style={'height':'30px','width':'270px'})
+                     input.num3(type="button" value="/"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="7"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="8"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="9"  style={'height':'70px','width':'90px'})
                tr
                   td
-                     lable(type="text" style={'height':'20px','width':'90px'}) 优惠卷
-                     input#money_100(type="radio" value="1")
-                     label 100
-                     input#money_50(type="radio" value="2")
-                     label 50
-               tr
-                  td
-                     lable(type="text" style={'height':'20px','width':'90px'}) 折扣
-                     |&nbsp;&nbsp;
-                     input#dazhe.form-control(type="text" value="" style={'height':'30px','width':'270px'})
-                     label(type="text") 折
-               tr
-                  td
-                     input.num2(type="button" value="/"  style={'height':'70px','width':'90px'})
-                     input.num2(type="button" value="7"  style={'height':'70px','width':'90px'})
-                     input.num2(type="button" value="8"  style={'height':'70px','width':'90px'})
-               tr
-                  td
-                     input.num2(type="button" value="9"  style={'height':'70px','width':'90px'})
                      input#delete(type="button" value="<-"  style={'height':'70px','width':'90px'})
-                     input.num2(type="button" value="4"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="4"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="5"  style={'height': '70px', 'width': '90px'})
+                     input.num3(type="button" value="6"  style={'height': '70px', 'width': '90px'})
                tr
                   td
-                     input.num2(type="button" value="5"  style={'height':'70px','width':'90px'})
-                     input.num2(type="button" value="6"  style={'height':'70px','width':'90px'})
                      input#delAll(type="button" value="CE"  style={'height':'70px','width':'90px'})
-               tr
-                  td
-                     input.num2(type="button" value="1"  style={'height':'70px','width':'90px'})
-                     input.num2(type="button" value="2"  style={'height':'70px','width':'90px'})
-                     input.num2(type="button" value="3"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="1"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="2"  style={'height':'70px','width':'90px'})
+                     input.num3(type="button" value="3"  style={'height':'70px','width':'90px'})
                tr
                   td
                      input#set00(type="button" value="C"  style={'height': '70px', 'width': '90px'})
-                     input.num2(type="button" value="0"  style={'height': '70px', 'width': '90px'})
-                     input.num2(type="button" value="."  style={'height': '70px', 'width': '90px'})
-               tr
-                  td
+                     input.num3(type="button" value="0"  style={'height': '70px', 'width': '90px'})
+                     input.num3(type="button" value="."  style={'height': '70px', 'width': '90px'})
                      input#getResult(type="button" value="计算"  style={'height':'70px','width':'90px'})
       script(src='/js/choose.js')
       script(src='/js/index.js')
+      script(src='/js/end.js')
 

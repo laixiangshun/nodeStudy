@@ -5,6 +5,8 @@ html
       meta(http-equiv="content-type" content="text/html;charset=utf-8")
       title #{title}
       include ./includes/head.jade
-   body(style={'padding-bottom':'50px'})
-      include ./includes/header.jade
-      block content
+   body(style={'padding-top':'50px','margin':'0'})
+      .container(style={'margin-left':'500px'})
+         include ./includes/header.jade
+            .caption(style={'margin-bottom':'0'})
+               block content

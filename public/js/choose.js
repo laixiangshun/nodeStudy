@@ -13,6 +13,7 @@ $(function(){
         if( $('#num3').attr('checked')=='checked')
         {
             $('#num3').attr('checked',false);
+           // $('#num3').removeAttr('checked');
         }
         $('#first').css('display','block');
         $('#next').css('display','none');
